@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercício 06</title>
+</head>
+<body>
+<!-- Ordenar uma lista de inteiros (separados por vírgula) de 
+  um dado campo de entrada, a partir do click de um botão. -->
+
+Números: <input type="text" id="txtNumeros">
+<button value="Ordenar" onclick="show()">Ordenar</button>
+
+<script>
+
+  function sortFunction(a, b) {
+    return (a - b)  // ordena o array numericamente e em ordem crescente
+  }
+
+  function show() {
+    let Data = document.getElementById("txtNumeros").value
+    Data = Data.split(',')
+
+    alert(Data.sort(sortFunction))
+  }
+  
+</script>
+</body>
+</html>
