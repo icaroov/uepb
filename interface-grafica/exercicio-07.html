@@ -11,21 +11,21 @@
   de um dado campo de entrada, a partir do click de um botão. -->
 
 Números: <input type="text" id="txtNumeros">
-<button value="Somar" onclick="soma()">Somar</button>
+<button value="Somar ímpares" onclick="soma()">Somar números ímpares</button>
 
 <script>
 
 function soma() {
-tamanho = document.getElementById("txtNumeros").value
-tamanho = tamanho.split(",").map(function(item) {
-    return parseInt(item, 10);
+var tamanho = document.getElementById("txtNumeros").value
+var tamanho = tamanho.split(",").map(function(item) {
+    return parseInt(item, 10)
 })
 console.log(tamanho)
 
-total = 0
+var total = 0
 
 for (i = 0; i < tamanho.length; i++) {  
-   if (i % 3 == 0){
+   if (tamanho[i] % 3 == 0){
     total += tamanho[i]
   } 
 }
