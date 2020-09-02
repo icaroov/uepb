@@ -6,15 +6,33 @@
   <title>Exercício 08</title>
 </head>
 <body>
+
 <!-- Efetuar o fatorial dos números que se encontram na lista 
   de inteiros (separados por vírgula) de um dado campo de entrada, 
   a partir do click de um botão. -->
 
-Números: <input type="text" id="txtNumeros">
-<button value="Fatorial" onclick="efetuarFatorial()">Efetuar fatorial</button>
+Fatorial de: <input id="txtNumeros" type="text">
+<button onclick="fatorial()">Exibir</button>
 
 <script>
-  
+
+function fatorial(){
+  var numero  = document.getElementById('txtNumeros').value
+  numero = numero.split(",").map(function(item) {
+    return parseInt(item, 10)
+})
+
+  console.log(numero)
+
+  var resultado = 1
+
+  for(i = 1; i <= numero.length; i++) {
+    resultado *= i
+  }
+  // fatorial da quantidade de elementos do array
+  alert(`Fatorial é: ${resultado}`)
+}
+
 </script>
 </body>
 </html>
