@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercício 10</title>
+</head>
+<body>
+
+<!-- Desenvolva uma página HTML capaz de inverter os valores 
+  (ex:[1, 5, 7, 2] fica [2, 7, 5, 1]) na lista de inteiros 
+  (separados por vírgula) de um dado campo de entrada, a partir 
+  do click de um botão. -->
+
+Insira os valores: <input id="txtNumeros" type="text">
+<button onclick="inverter()">Inverter valores</button>
+
+<script>
+
+function inverter() {
+  var numeros = document.getElementById("txtNumeros").value
+  var numeros = numeros.split(",").map(function(item) {
+    return parseInt(item, 10)
+})
+  console.log(numeros)
+
+  // slice: método que basicamente cloca o array original e inverte seus valores
+  var arrayInvertido = numeros.slice(0).reverse()
+
+  alert(arrayInvertido)
+}
+
+</script>
+</body>
+</html>
